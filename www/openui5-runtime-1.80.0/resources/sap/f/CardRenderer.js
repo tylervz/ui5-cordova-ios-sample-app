@@ -1,0 +1,6 @@
+/*!
+ * OpenUI5
+ * (c) Copyright 2009-2020 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+sap.ui.define(["sap/f/library"],function(l){"use strict";var H=l.cards.HeaderPosition;var C={apiVersion:2};var r=sap.ui.getCore().getLibraryResourceBundle("sap.f");C.render=function(R,c){var h=c.getCardHeader(),s=c.getHeight(),b=h&&c.getCardHeaderPosition()===H.Bottom,t=c.getTooltip_AsString(),f=c.getAggregation("_filterBar");R.openStart("div",c).class("sapFCard").style("width",c.getWidth());if(!c.getCardContent()){R.class("sapFCardNoContent");}if(b){R.class("sapFCardBottomHeader");}if(s&&s!=="auto"){R.style("height",s);}if(t){R.attr("title",t);}R.accessibilityState(c,{role:"region",labelledby:{value:c.getId()+"-ariaText",append:true}});R.openEnd();if(h&&c.getCardHeaderPosition()===H.Top){R.renderControl(h);}if(f){R.openStart("div").class("sapFCardFilterBar").openEnd();R.renderControl(f);R.close("div");}C.renderContentSection(R,c);if(b){R.renderControl(h);}R.renderControl(c._ariaText);R.close("div");};C.renderContentSection=function(R,c){var o=c.getCardContent();if(o){R.openStart("div").class("sapFCardContent").accessibilityState(c,{role:"group",label:{value:r.getText("ARIA_LABEL_CARD_CONTENT"),append:true}}).openEnd();R.renderControl(o);R.close("div");}};return C;});
