@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ActionSheet
+		id="homePageActions"
+		title="Choose an Action"
+		showCancelButton="true"
+		placement="Auto">
+		<buttons>
+			<Button id="openAlertButton" press=".openAlert" text="{i18n>openAlertButtonText}" icon="sap-icon://add" />
+			<Button id="toastButton" press=".openToast" text="{i18n>openToastButtonText}" />
+		</buttons>
+	</ActionSheet>
+</core:FragmentDefinition>

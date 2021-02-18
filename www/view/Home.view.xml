@@ -6,6 +6,11 @@
 	<Page
 		id="page"
 		title="{i18n>title}">
-		<content></content>
+		<content>
+			<VBox>
+				<Button text="Show Message" type="Accept" press="handleShowMessageButton"/>
+				<Button text="Open Action Sheet" type="Accept" press="handleOpenActionSheetButton"/>
+			</VBox>
+		</content>
 	</Page>
 </mvc:View>
