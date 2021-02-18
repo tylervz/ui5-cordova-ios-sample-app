@@ -76,6 +76,11 @@
 					"pattern": "",
 					"name": "home",
 					"target": ["home"]
+				},
+				{
+					"pattern": "detail",
+					"name": "detail",
+					"target": ["detail"]
 				}
 			],
 			"targets": {
@@ -84,6 +89,12 @@
 					"viewId": "home",
 					"viewLevel": 1,
 					"title": "{i18n>title}"
+				},
+				"detail": {
+					"viewName": "Detail",
+					"viewId": "detail",
+					"viewLevel": 1,
+					"title": "{i18n>detailTitle}"
 				}
 			}
 		}

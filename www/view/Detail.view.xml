@@ -1,0 +1,21 @@
+<mvc:View
+	controllerName="sap.ui.demo.basicTemplate.controller.Detail"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		id="detailPage"
+		title="{i18n>detailTitle}"
+		showNavButton="true"
+		navButtonType="Back"
+		navButtonPress="backTriggered">
+		<content>
+			<VBox>
+				<Text text="Here is another page in the app" />
+				<Button text="Show a different Message" type="Accept" press="handleShowMessageButton"/>
+				<Button text="Open a message toast" type="Accept" press="handleToastButton"/>
+				<Button text="Go to Home" type="Accept" press="handleNavHomeButton"/>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

@@ -10,6 +10,7 @@
 			<VBox>
 				<Button text="Show Message" type="Accept" press="handleShowMessageButton"/>
 				<Button text="Open Action Sheet" type="Accept" press="handleOpenActionSheetButton"/>
+				<Button text="Go to Detail Page" type="Accept" press="handleNavDetailButton"/>
 			</VBox>
 		</content>
 	</Page>

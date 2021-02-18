@@ -7,7 +7,7 @@ sap.ui.define([
 ], function(MessageBox, MessageToast, Fragment, Controller, formatter) {
 	"use strict";
 
-	return Controller.extend("sap.ui.demo.basicTemplate.controller.App", {
+	return Controller.extend("sap.ui.demo.basicTemplate.controller.Home", {
 
 		formatter: formatter,
 
@@ -45,6 +45,12 @@ sap.ui.define([
 				var actionSheet = this.byId("homePageActions");
 				actionSheet.openBy(oButton);
 			}
+		},
+
+		handleNavDetailButton: function(oEvent) {
+			var route = "detail";
+			var oRouter = this.getOwnerComponent().getRouter();
+			oRouter.navTo(route);
 		},
 
 		openAlert: function() {
