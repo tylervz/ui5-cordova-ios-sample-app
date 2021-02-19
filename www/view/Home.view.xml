@@ -6,11 +6,15 @@
 	<Page
 		id="page"
 		title="{i18n>title}">
+		<headerContent>
+            <Button icon="sap-icon://filter" press="createAndOpenFilter" />
+        </headerContent>
 		<content>
 			<VBox>
 				<Button text="Show Message" type="Accept" press="handleShowMessageButton"/>
 				<Button text="Open Action Sheet" type="Accept" press="handleOpenActionSheetButton"/>
 				<Button text="Go to Detail Page" type="Accept" press="handleNavDetailButton"/>
+				<Button text="Show Today's Date" type="Accept" press="showTodaysDate"/>
 			</VBox>
 		</content>
 	</Page>

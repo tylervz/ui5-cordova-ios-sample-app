@@ -2,6 +2,7 @@
 	controllerName="sap.ui.demo.basicTemplate.controller.Detail"
 	displayBlock="true"
 	xmlns="sap.m"
+	xmlns:u="sap.ui.unified"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Page
 		id="detailPage"
@@ -15,6 +16,13 @@
 				<Button text="Show a different Message" type="Accept" press="handleShowMessageButton"/>
 				<Button text="Open a message toast" type="Accept" press="handleToastButton"/>
 				<Button text="Go to Home" type="Accept" press="handleNavHomeButton"/>
+
+				<u:Calendar
+					id="calendar"
+					class="calendar"
+					select="handleCalendarSelect"
+					intervalSelection="false"
+					singleSelection="false"/>
 			</VBox>
 		</content>
 	</Page>

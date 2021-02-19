@@ -1,0 +1,64 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog
+		id="filterDialog"
+		stretch="false"
+		title="{i18n>filterDialogTitle}"
+		type="Message"
+		class="searchFilter">
+		<content>
+			<VBox>
+				<Label text="{i18n>CatalogTypeLabel}" />
+				<Select
+					items="{Search>/typesOfCatalogs}"
+					selectedKey="{Search>/selectedTypeOfCatalog}"
+					width="100%">
+					<core:Item key="{Search>type}" text="{Search>text}" />
+				</Select>
+
+				<Label
+					text="{i18n>searchFilterStartDateLabel}"
+					visible="{=${Search>/selectedTypeOfCatalog} === '2'}" />
+				<DatePicker
+						id="startDate"
+						visible="{=${Search>/selectedTypeOfCatalog} === '2'}"
+						value="{Search>/startDate}"
+						displayFormat="{i18n>DateFormat}"
+						valueFormat="{i18n>CustomDateTimeFormat}"/>
+
+				<Label
+						text="{i18n>searchFilterEndDateLabel}"
+						visible="{=${Search>/selectedTypeOfCatalog} === '2'}" />
+				<DatePicker
+						id="endDate"
+						visible="{=${Search>/selectedTypeOfCatalog} === '2'}"
+						value="{Search>/endDate}"
+						displayFormat="{i18n>DateFormat}"
+						valueFormat="{i18n>CustomDateTimeFormat}"/>
+
+				<Label text="{i18n>sortLabel}" />
+				<Select
+					forceSelection="false"
+					items="{Search>/sortOptions}"
+					selectedKey="{Search>/selectedSort}">
+					<core:Item key="{Search>key}" text="{Search>text}" />
+				</Select>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button
+				text="{i18n>cancelButton}"
+				type="Reject"
+				press="cancelFilter" />
+		</beginButton>
+		<endButton>
+			<Button
+				id="saveSearchFilter"
+				text="{i18n>saveButton}"
+				type="Accept"
+				enabled="{= ${/includeScheduled} || ${/includeUnscheduled} }"
+				press="saveFilter" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
