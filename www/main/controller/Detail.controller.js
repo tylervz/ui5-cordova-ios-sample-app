@@ -9,7 +9,7 @@ sap.ui.define([
 ], function(MessageBox, MessageToast, Fragment, Controller, History, DateTypeRange, formatter) {
 	"use strict";
 
-	return Controller.extend("sap.ui.demo.basicTemplate.controller.Detail", {
+	return Controller.extend("main.controller.Detail", {
 
 		formatter: formatter,
 		// Specifies which color the dates show up as on the calendar

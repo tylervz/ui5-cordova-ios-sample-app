@@ -9,7 +9,7 @@ sap.ui.define([
 ], function(MessageBox, MessageToast, DateFormat, Fragment, Controller, JSONModel, formatter) {
 	"use strict";
 
-	return Controller.extend("sap.ui.demo.basicTemplate.controller.Home", {
+	return Controller.extend("main.controller.Home", {
 
 		formatter: formatter,
 		searchModel: new JSONModel(),
@@ -94,7 +94,7 @@ sap.ui.define([
 				// load asynchronous XML fragment
 				Fragment.load({
 					id: oView.getId(),
-					name: "sap.ui.demo.basicTemplate.fragments.HomePageActions",
+					name: "main.fragments.HomePageActions",
 					controller: this
 				}).then(function (oActionSheet) {
 					oView.addDependent(oActionSheet);
@@ -143,7 +143,7 @@ sap.ui.define([
 				// load asynchronous XML fragment
 				Fragment.load({
 					id: oView.getId(),
-					name: "sap.ui.demo.basicTemplate.fragments.Filter",
+					name: "main.fragments.Filter",
 					controller: this
 				}).then(function (oDialog) {
 					oView.addDependent(oDialog);
