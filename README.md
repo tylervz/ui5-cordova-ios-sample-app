@@ -1,6 +1,6 @@
 # Hello UI5 Cordova 
 
-This Cordova project demonstrates an issue with using OpenUI5 and Cordova iOS when running the app on iOS 12.
+This Cordova project demonstrates an issue with using OpenUI5 and Cordova iOS when running the app is on iOS 12.
 
 I'm not sure if the bugs are a Cordova issue or an OpenUI5 issue since the app runs fine on iOS 11, 13 and 14.
 
@@ -37,7 +37,8 @@ Use this command to start the application on Android:
 
 Launch the app on an iOS device (emulator or actual device) running iOS 12.4. I believe the issues would happen with any 12.x version of iOS; 12.4 is highest so I've been testing with that on an emulator.
 
-Press the Show Today's Date button. Instead of showing a toast with today's date, the page appears to refresh. This is the JavaScript line that's not executing as expected:
+Press the Show Today's Date button. Instead of showing a toast with today's date, the page appears to refresh.
+This is the [JavaScript line](https://github.com/tylervz/ui5-cordova-ios-sample-app/blob/1f9861f681fdae250cd77a0f499d99d0cfdc0420/www/controller/Home.controller.js#L186-L188) that's not executing as expected:
 ```
 DateFormat.getDateTimeInstance({ pattern: "yyyy-MM-dd HH:mm:ss.S" });
 ```
@@ -48,12 +49,13 @@ If you were to remove the `DatePicker` from the dialog and the corresponding cod
 
 Press the Go To Detail Page button. The app crashes rather than showing the page with a `sap.ui.unified.Calendar`.
 
-If you run the app on Android or a different iOS version, the app behaves as expected (with a couple exceptions noted below for iOS 11).
+If you run the app on Android or a different iOS version, the app behaves as expected (with a couple exceptions [noted below](https://github.com/tylervz/ui5-cordova-ios-sample-app#issues-specific-to-ios-11) for iOS 11).
 Additionally, if you checkout the `working` branch, you can run the app on iOS 12.4 and navigate to the Detail Page without the app crashing because the page does not have the `sap.ui.unified.Calendar` control on it.
 
 # Attempts to fix the issues
 
-I have tried upgrading to [UI5 1.85.2](https://openui5.org/releases/) (because that was the latest version of UI5 at the time) but that did not resolve the issues.
+I have tried upgrading to [UI5 1.85.2](https://github.com/SAP/openui5/releases/download/1.85.2/openui5-runtime-1.85.2.zip)
+(because that was the latest version of UI5 at the time) but that did not resolve the issues.
 
 Other versions of OpenUI5 can be [found here](https://openui5.org/releases/). Note that I am not using the mobile runtime.
 
